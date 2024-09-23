@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 #%%
 import pandas as pd
 
-path = r'C:\Users\Ethan\Desktop\league_item_path\Modeling\model_ready.parquet'
+path = r'Modeling\model_ready.parquet'
 df = pd.read_parquet(path)
 
 # %%
@@ -74,6 +74,6 @@ with torch.no_grad():
     print(model(X_test))
 
 # %%
-path = r'C:\Users\Ethan\Desktop\league_item_path\Modeling\first_attempt_pytorch.pt'
+path = r'Modeling\first_attempt_pytorch.pt'
 torch.save(model.state_dict(), path)
 
