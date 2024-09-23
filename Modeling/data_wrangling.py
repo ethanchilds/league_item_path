@@ -4,7 +4,7 @@ import pyarrow
 import numpy as np
 
 # %%
-path = r'C:\Users\Ethan\Desktop\league_item_path\Data_Collection\Data\league_data.parquet'
+path = r'Data_Collection\Data\league_data.parquet'
 df = pd.read_parquet(path)
 df = df.drop(['item6', 'item3', 'item4', 'item5'], axis=1)
 
@@ -43,5 +43,5 @@ one_hot_encoded_data = pd.get_dummies(df, columns = ['championName', 'teamPositi
 one_hot_encoded_data.info()
 
 # %%
-path = r'C:\Users\Ethan\Desktop\league_item_path\Modeling\model_ready.parquet'
+path = r'Modeling\model_ready.parquet'
 one_hot_encoded_data.to_parquet(path, compression=None, engine='pyarrow')
