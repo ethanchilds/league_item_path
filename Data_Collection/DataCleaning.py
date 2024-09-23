@@ -3,7 +3,7 @@ import pandas as pd
 import pyarrow
 
 # %%
-base_raw = r'C:\Users\Ethan\Desktop\league_item_path\Data_Collection\Raw_Data\raw_data_'
+base_raw = r'Raw_Data\raw_data_'
 
 df = pd.read_json(base_raw + '1.json')
 
@@ -67,5 +67,5 @@ bans = pd.concat([bans0, bans1], axis=1)
 final = pd.concat([participants_filtered, bans], axis=1)
 
 # %%
-path = r'C:\Users\Ethan\Desktop\league_item_path\Data_Collection\Data\league_data.parquet'
+path = r'Data\league_data.parquet'
 final.to_parquet(path, compression=None, engine='pyarrow')
